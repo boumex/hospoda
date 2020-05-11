@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Najdi hospodu</title>
+        <link rel="icon" href="img/pivo.png">
+        <link rel="stylesheet" href="styly.css">
+        <script type="text/javascript" src="https://api.mapy.cz/loader.js"></script>
+        <script type="text/javascript">Loader.load();</script>
+    </head>
+    <body>
+        <div style="width:300px; float:left;">
+            <h1>Nán</h1>Bleh
+            <form id="form">
+                <p>
+                    <label>1. adresa: <input type="text" id="query1" value="" /></label><br><br>
+                    <label>2. adresa: <input type="text" id="query2" value="" /></label><br><br>
+                    <input type="button" onclick="fce_add(this);" value="přidat adresu"/><input type="button" onclick="fce_remove(this);" value="odebrat adresu"/><br><br>
+                    <input type="submit" value="Hledat" />
+                </p>
+            </form>
+        </div>
+
+        <div id="m" style="object-fit:contain; height:500px; width:800px;">
+        <script src="index.js"></script>
+        </div>
+
+    </body>
+</html>
