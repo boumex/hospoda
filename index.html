@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -9,19 +9,24 @@
         <script type="text/javascript">Loader.load();</script>
     </head>
     <body>
-        <div style="width:300px; float:left;">
-            <h1>Nán</h1>Bleh
+        <div style="padding-left: 10px; float:left; object-fit:contain; margin:auto; max-width:800px; width:100%;">
+            <h1>Najdi hospodu</h1>Zadejte adresy do příslušných kolonek a klikněte na tlačítko "Hledat". V novém okně se Vám zobrazí pozice ideální hospody.<br>
+            Program zatím hledá pouze průměr souřadnic. Sociálně vhodný střed je moc složitý na výpočet.<br>
+            Je možné, že za současného nouzového stavu program nenajde žádnou hospodu která by vyhovovala.<br><br>
+            Mapa zatím funguje pouze k nalezení Vámi žádané adresy.<br><br>
             <form id="form">
-                <p>
-                    <label>1. adresa: <input type="text" id="query1" value="" /></label><br><br>
-                    <label>2. adresa: <input type="text" id="query2" value="" /></label><br><br>
-                    <input type="button" onclick="fce_add(this);" value="přidat adresu"/><input type="button" onclick="fce_remove(this);" value="odebrat adresu"/><br><br>
-                    <input type="submit" value="Hledat" />
+                <p id="adresy">
+                    <label>1. adresa: <input type="text" id="query1" value="praha" /></label><br><br>
+                    <label>2. adresa: <input type="text" id="query2" value="brno" /></label><br><br>
                 </p>
+                <input type="button" onclick="pridat();" value="přidat adresu"/>
+                <input type="button" onclick="odebrat();" value="odebrat adresu"/><br><br>
+                <input type="submit" value="Hledat" />
             </form>
-        </div>
+            <br><br>
+       </div>
 
-        <div id="m" style="object-fit:contain; height:500px; width:800px;">
+        <div id="m" style="object-fit:contain; margin:left; max-width:1000px; width:100%; height:500px;">
         <script src="index.js"></script>
         </div>
 
