@@ -1,0 +1,9 @@
+h1 {
+  color: navy;
+  font-size: 40px;
+  font-family: Calibri;
+  padding: 0 0 0 20px;
+}
+label {
+  font-weight: bold;
+}
