@@ -1,15 +1,14 @@
 var center = SMap.Coords.fromWGS84(15.8, 49.7); // GPS na vycentrovani
 var m = new SMap(JAK.gel("m"), center, 8); // vycentrovat s priblizenim 8
 var sync = new SMap.Control.Sync({bottomSpace:10}); // tohle zaruci prizpusobeni vysky mapy v okne
-m.addControl(sync); // pridani prizpusobeni vysky mapy
 var query = [JAK.gel("query1").value, JAK.gel("query2").value];
 var souradnice = [];
-var i = 0;
+var i = 0; // indikator jestli probehly vsechny souradnice
 m.addControl(new SMap.Control.Sync()); // pohyb mapy
 m.addDefaultLayer(SMap.DEF_TURIST).enable(); // Turistická
 m.addDefaultControls(); // zakladni UI
-//var sync = new SMap.Control.Sync({bottomSpace:10});
-//m.addControl(sync);
+m.addControl(sync); // pridani prizpusobeni vysky mapy
+
 
 var form = JAK.gel("form");
 JAK.Events.addListener(form, "submit", geokoduj); /* Při odeslání formuláře spustit geokódování */
@@ -113,5 +112,10 @@ function odebrat() { /* Odebrat posledn iadresu */
 
 /*
 POZNAMKY K HTML
-- nejde nastavit promenliva vyska mapy, vzdycky se to spleskne
+
+*/
+
+/*
+POZNAMKY K JAVASCRIPTU A VYPOCTUM
+- pro vypocet optimalni pozice by se oplatilo vyuzit Centroid polygonu, viz wiki
 */
