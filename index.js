@@ -92,27 +92,48 @@ function pridat() { /* Pridat dalsi adresu */
     label.appendChild(newLine2);
 
     query[n-1] = JAK.gel("query"+n).value;
+    poziceMapy();
 }
 
 
-function odebrat() { /* Odebrat posledn iadresu */
+function odebrat() { /* Odebrat posledni adresu */
     n = query.length;
     if(n > 2) {
         p = document.getElementById("adresy");
         lastLabel = p.lastElementChild;
-        console.log(lastLabel.innerHTML);
         lastInput = document.getElementById("query"+n);
         lastLabel.removeChild(lastInput);
         lastLabel.innerHTML = "";
         p.removeChild(lastLabel);
         query.pop();
     }
+    poziceMapy();
 }
 
+function poziceMapy() {
+    if(window.outerWidth <= 1400) {
+        m = document.getElementById("m");
+        h = document.getElementById("textyText").clientHeight;
+        m.style.top = "0px";
+        m.style.left = "0px";
+        m.style.width = "100%";
+        k = window.outerHeight - h-110;
+        m.style.height = k+"px";
+    }
+
+    if(window.outerWidth > 1400) {
+        m = document.getElementById("m");
+        h = document.getElementById("textyText").clientHeight;
+        m.style.top = "0px";
+        m.style.left = "0px";
+        m.style.width = "";
+        m.style.maxHeight = "600px";
+    }
+}
 
 /*
 POZNAMKY K HTML
-
+- 
 */
 
 /*
