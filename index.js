@@ -1,5 +1,7 @@
 var center = SMap.Coords.fromWGS84(15.8, 49.7); // GPS na vycentrovani
 var m = new SMap(JAK.gel("m"), center, 8); // vycentrovat s priblizenim 8
+var sync = new SMap.Control.Sync({bottomSpace:10}); // tohle zaruci prizpusobeni vysky mapy v okne
+m.addControl(sync); // pridani prizpusobeni vysky mapy
 var query = [JAK.gel("query1").value, JAK.gel("query2").value];
 var souradnice = [];
 var i = 0;
